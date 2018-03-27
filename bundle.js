@@ -308,7 +308,7 @@ proto.setMode = function(mode) {
 
   prev.recalcMatrix(lastT)
   next.setMatrix(lastT, prev.computedMatrix)
-  
+
   this._active = next
   this._mode   = mode
 
@@ -458,7 +458,7 @@ module.exports = function(name, value) {
         return random() * 0x100000000; // 2^32
       };
       random.fract53 = function() {
-        return random() + 
+        return random() +
           (random() * 0x200000 | 0) * 1.1102230246251565e-16; // 2^-53
       };
       random.version = 'Alea 0.9';
@@ -474,7 +474,7 @@ module.exports = function(name, value) {
         s2 = +i[2] || 0;
         c = +i[3] || 0;
       };
- 
+
       return random;
 
     } (Array.prototype.slice.call(arguments)));
@@ -727,7 +727,7 @@ dat.color = dat.color || {};
 dat.utils = dat.utils || {};
 
 dat.utils.common = (function () {
-  
+
   var ARR_EACH = Array.prototype.forEach;
   var ARR_SLICE = Array.prototype.slice;
 
@@ -737,38 +737,38 @@ dat.utils.common = (function () {
    * http://documentcloud.github.com/underscore/
    */
 
-  return { 
-    
+  return {
+
     BREAK: {},
-  
+
     extend: function(target) {
-      
+
       this.each(ARR_SLICE.call(arguments, 1), function(obj) {
-        
+
         for (var key in obj)
-          if (!this.isUndefined(obj[key])) 
+          if (!this.isUndefined(obj[key]))
             target[key] = obj[key];
-        
+
       }, this);
-      
+
       return target;
-      
+
     },
-    
+
     defaults: function(target) {
-      
+
       this.each(ARR_SLICE.call(arguments, 1), function(obj) {
-        
+
         for (var key in obj)
-          if (this.isUndefined(target[key])) 
+          if (this.isUndefined(target[key]))
             target[key] = obj[key];
-        
+
       }, this);
-      
+
       return target;
-    
+
     },
-    
+
     compose: function() {
       var toCall = ARR_SLICE.call(arguments);
             return function() {
@@ -779,34 +779,34 @@ dat.utils.common = (function () {
               return args[0];
             }
     },
-    
+
     each: function(obj, itr, scope) {
 
-      
-      if (ARR_EACH && obj.forEach === ARR_EACH) { 
-        
+
+      if (ARR_EACH && obj.forEach === ARR_EACH) {
+
         obj.forEach(itr, scope);
-        
+
       } else if (obj.length === obj.length + 0) { // Is number but not NaN
-        
+
         for (var key = 0, l = obj.length; key < l; key++)
-          if (key in obj && itr.call(scope, obj[key], key) === this.BREAK) 
+          if (key in obj && itr.call(scope, obj[key], key) === this.BREAK)
             return;
-            
+
       } else {
 
-        for (var key in obj) 
+        for (var key in obj)
           if (itr.call(scope, obj[key], key) === this.BREAK)
             return;
-            
+
       }
-            
+
     },
-    
+
     defer: function(fnc) {
       setTimeout(fnc, 0);
     },
-    
+
     toArray: function(obj) {
       if (obj.toArray) return obj.toArray();
       return ARR_SLICE.call(obj);
@@ -815,41 +815,41 @@ dat.utils.common = (function () {
     isUndefined: function(obj) {
       return obj === undefined;
     },
-    
+
     isNull: function(obj) {
       return obj === null;
     },
-    
+
     isNaN: function(obj) {
       return obj !== obj;
     },
-    
+
     isArray: Array.isArray || function(obj) {
       return obj.constructor === Array;
     },
-    
+
     isObject: function(obj) {
       return obj === Object(obj);
     },
-    
+
     isNumber: function(obj) {
       return obj === obj+0;
     },
-    
+
     isString: function(obj) {
       return obj === obj+'';
     },
-    
+
     isBoolean: function(obj) {
       return obj === false || obj === true;
     },
-    
+
     isFunction: function(obj) {
       return Object.prototype.toString.call(obj) === '[object Function]';
     }
-  
+
   };
-    
+
 })();
 
 
@@ -1513,7 +1513,7 @@ dat.utils.css = (function () {
 
 
 dat.utils.common = (function () {
-  
+
   var ARR_EACH = Array.prototype.forEach;
   var ARR_SLICE = Array.prototype.slice;
 
@@ -1523,38 +1523,38 @@ dat.utils.common = (function () {
    * http://documentcloud.github.com/underscore/
    */
 
-  return { 
-    
+  return {
+
     BREAK: {},
-  
+
     extend: function(target) {
-      
+
       this.each(ARR_SLICE.call(arguments, 1), function(obj) {
-        
+
         for (var key in obj)
-          if (!this.isUndefined(obj[key])) 
+          if (!this.isUndefined(obj[key]))
             target[key] = obj[key];
-        
+
       }, this);
-      
+
       return target;
-      
+
     },
-    
+
     defaults: function(target) {
-      
+
       this.each(ARR_SLICE.call(arguments, 1), function(obj) {
-        
+
         for (var key in obj)
-          if (this.isUndefined(target[key])) 
+          if (this.isUndefined(target[key]))
             target[key] = obj[key];
-        
+
       }, this);
-      
+
       return target;
-    
+
     },
-    
+
     compose: function() {
       var toCall = ARR_SLICE.call(arguments);
             return function() {
@@ -1565,34 +1565,34 @@ dat.utils.common = (function () {
               return args[0];
             }
     },
-    
+
     each: function(obj, itr, scope) {
 
-      
-      if (ARR_EACH && obj.forEach === ARR_EACH) { 
-        
+
+      if (ARR_EACH && obj.forEach === ARR_EACH) {
+
         obj.forEach(itr, scope);
-        
+
       } else if (obj.length === obj.length + 0) { // Is number but not NaN
-        
+
         for (var key = 0, l = obj.length; key < l; key++)
-          if (key in obj && itr.call(scope, obj[key], key) === this.BREAK) 
+          if (key in obj && itr.call(scope, obj[key], key) === this.BREAK)
             return;
-            
+
       } else {
 
-        for (var key in obj) 
+        for (var key in obj)
           if (itr.call(scope, obj[key], key) === this.BREAK)
             return;
-            
+
       }
-            
+
     },
-    
+
     defer: function(fnc) {
       setTimeout(fnc, 0);
     },
-    
+
     toArray: function(obj) {
       if (obj.toArray) return obj.toArray();
       return ARR_SLICE.call(obj);
@@ -1601,41 +1601,41 @@ dat.utils.common = (function () {
     isUndefined: function(obj) {
       return obj === undefined;
     },
-    
+
     isNull: function(obj) {
       return obj === null;
     },
-    
+
     isNaN: function(obj) {
       return obj !== obj;
     },
-    
+
     isArray: Array.isArray || function(obj) {
       return obj.constructor === Array;
     },
-    
+
     isObject: function(obj) {
       return obj === Object(obj);
     },
-    
+
     isNumber: function(obj) {
       return obj === obj+0;
     },
-    
+
     isString: function(obj) {
       return obj === obj+'';
     },
-    
+
     isBoolean: function(obj) {
       return obj === false || obj === true;
     },
-    
+
     isFunction: function(obj) {
       return Object.prototype.toString.call(obj) === '[object Function]';
     }
-  
+
   };
-    
+
 })();
 
 
@@ -1810,7 +1810,7 @@ dat.dom.dom = (function (common) {
   var dom = {
 
     /**
-     * 
+     *
      * @param elem
      * @param selectable
      */
@@ -2030,7 +2030,7 @@ dat.dom.dom = (function (common) {
 
     // http://stackoverflow.com/posts/2684561/revisions
     /**
-     * 
+     *
      * @param elem
      */
     isActive: function(elem) {
@@ -2394,7 +2394,7 @@ dat.controllers.NumberControllerSlider = (function (NumberController, dom, css, 
    *
    * @extends dat.controllers.Controller
    * @extends dat.controllers.NumberController
-   * 
+   *
    * @param {Object} object The object to be manipulated
    * @param {string} property The name of the property to be manipulated
    * @param {Number} minValue Minimum allowed value
@@ -2411,11 +2411,11 @@ dat.controllers.NumberControllerSlider = (function (NumberController, dom, css, 
 
     this.__background = document.createElement('div');
     this.__foreground = document.createElement('div');
-    
+
 
 
     dom.bind(this.__background, 'mousedown', onMouseDown);
-    
+
     dom.addClass(this.__background, 'slider');
     dom.addClass(this.__foreground, 'slider-fg');
 
@@ -2433,7 +2433,7 @@ dat.controllers.NumberControllerSlider = (function (NumberController, dom, css, 
 
       var offset = dom.getOffset(_this.__background);
       var width = dom.getWidth(_this.__background);
-      
+
       _this.setValue(
         map(e.clientX, offset.left, offset.left + width, _this.__min, _this.__max)
       );
@@ -2490,7 +2490,7 @@ dat.controllers.NumberControllerSlider = (function (NumberController, dom, css, 
   }
 
   return NumberControllerSlider;
-  
+
 })(dat.controllers.NumberController,
 dat.dom.dom,
 dat.utils.css,
@@ -2538,7 +2538,7 @@ dat.controllers.FunctionController = (function (Controller, dom, common) {
       FunctionController.prototype,
       Controller.prototype,
       {
-        
+
         fire: function() {
           if (this.__onChange) {
             this.__onChange.call(this);
@@ -2613,10 +2613,10 @@ dat.controllers.BooleanController = (function (Controller, dom, common) {
         },
 
         updateDisplay: function() {
-          
+
           if (this.getValue() === true) {
             this.__checkbox.setAttribute('checked', 'checked');
-            this.__checkbox.checked = true;    
+            this.__checkbox.checked = true;
           } else {
               this.__checkbox.checked = false;
           }
@@ -4379,7 +4379,7 @@ dat.controllers.StringController = (function (Controller, dom, common) {
         this.blur();
       }
     });
-    
+
 
     function onChange() {
       _this.setValue(_this.__input.value);
@@ -4505,7 +4505,7 @@ dat.controllers.ColorController = (function (Controller, dom, Color, interpret, 
       borderRadius: '12px',
       zIndex: 1
     });
-    
+
     common.extend(this.__hue_knob.style, {
       position: 'absolute',
       width: '15px',
@@ -4528,7 +4528,7 @@ dat.controllers.ColorController = (function (Controller, dom, Color, interpret, 
       height: '100%',
       background: 'none'
     });
-    
+
     linearGradient(value_field, 'top', 'rgba(0,0,0,0)', '#000');
 
     common.extend(this.__hue_field.style, {
@@ -4715,16 +4715,16 @@ dat.controllers.ColorController = (function (Controller, dom, Color, interpret, 
       }
 
   );
-  
+
   var vendors = ['-moz-','-o-','-webkit-','-ms-',''];
-  
+
   function linearGradient(elem, x, a, b) {
     elem.style.background = '';
     common.each(vendors, function(vendor) {
       elem.style.cssText += 'background: ' + vendor + 'linear-gradient('+x+', '+a+' 0%, ' + b + ' 100%); ';
     });
   }
-  
+
   function hueGradient(elem) {
     elem.style.background = '';
     elem.style.cssText += 'background: -moz-linear-gradient(top,  #ff0000 0%, #ff00ff 17%, #0000ff 34%, #00ffff 50%, #00ff00 67%, #ffff00 84%, #ff0000 100%);'
@@ -5059,7 +5059,7 @@ dat.dom.CenteredDiv = (function (dom, common) {
   CenteredDiv.prototype.show = function() {
 
     var _this = this;
-    
+
 
 
     this.backgroundElement.style.display = 'block';
@@ -5109,7 +5109,7 @@ dat.dom.CenteredDiv = (function (dom, common) {
     this.domElement.style.left = window.innerWidth/2 - dom.getWidth(this.domElement) / 2 + 'px';
     this.domElement.style.top = window.innerHeight/2 - dom.getHeight(this.domElement) / 2 + 'px';
   };
-  
+
   function lockScroll(e) {
     console.log(e);
   }
@@ -6273,7 +6273,7 @@ function forEach(list, iterator, context) {
     if (arguments.length < 3) {
         context = this
     }
-    
+
     if (toString.call(list) === '[object Array]')
         forEachArray(list, iterator, context)
     else if (typeof list === 'string')
@@ -6555,7 +6555,7 @@ function fromRotationTranslation(out, q, v) {
     out[13] = v[1];
     out[14] = v[2];
     out[15] = 1;
-    
+
     return out;
 };
 },{}],26:[function(require,module,exports){
@@ -6681,8 +6681,8 @@ function invert(out, a) {
         // Calculate the determinant
         det = b00 * b11 - b01 * b10 + b02 * b09 + b03 * b08 - b04 * b07 + b05 * b06;
 
-    if (!det) { 
-        return null; 
+    if (!det) {
+        return null;
     }
     det = 1.0 / det;
 
@@ -6814,7 +6814,7 @@ function multiply(out, a, b) {
         a30 = a[12], a31 = a[13], a32 = a[14], a33 = a[15];
 
     // Cache only the current line of the second matrix
-    var b0  = b[0], b1 = b[1], b2 = b[2], b3 = b[3];  
+    var b0  = b[0], b1 = b[1], b2 = b[2], b3 = b[3];
     out[0] = b0*a00 + b1*a10 + b2*a20 + b3*a30;
     out[1] = b0*a01 + b1*a11 + b2*a21 + b3*a31;
     out[2] = b0*a02 + b1*a12 + b2*a22 + b3*a32;
@@ -6976,7 +6976,7 @@ function rotate(out, a, rad, axis) {
         b20, b21, b22;
 
     if (Math.abs(len) < 0.000001) { return null; }
-    
+
     len = 1 / len;
     x *= len;
     y *= len;
@@ -7196,7 +7196,7 @@ module.exports = str;
 function str(a) {
     return 'mat4(' + a[0] + ', ' + a[1] + ', ' + a[2] + ', ' + a[3] + ', ' +
                     a[4] + ', ' + a[5] + ', ' + a[6] + ', ' + a[7] + ', ' +
-                    a[8] + ', ' + a[9] + ', ' + a[10] + ', ' + a[11] + ', ' + 
+                    a[8] + ', ' + a[9] + ', ' + a[10] + ', ' + a[11] + ', ' +
                     a[12] + ', ' + a[13] + ', ' + a[14] + ', ' + a[15] + ')';
 };
 },{}],41:[function(require,module,exports){
@@ -7285,7 +7285,7 @@ function transpose(out, a) {
         out[14] = a[11];
         out[15] = a[15];
     }
-    
+
     return out;
 };
 },{}],43:[function(require,module,exports){
@@ -7574,7 +7574,7 @@ module.exports = function decomposeMat4(matrix, translation, scale, skew, perspe
 
         //multiply by transposed inverse perspective matrix, into perspective vec4
         vec4multMat4(perspective, tmpVec4, perspectiveMatrix)
-    } else { 
+    } else {
         //no perspective
         perspective[0] = perspective[1] = perspective[2] = 0
         perspective[3] = 1
@@ -7657,7 +7657,7 @@ function mat3from4(out, mat4x4) {
     out[0][0] = mat4x4[0]
     out[0][1] = mat4x4[1]
     out[0][2] = mat4x4[2]
-    
+
     out[1][0] = mat4x4[4]
     out[1][1] = mat4x4[5]
     out[1][2] = mat4x4[6]
@@ -7676,7 +7676,7 @@ function combine(out, a, b, scale1, scale2) {
 module.exports = function normalize(out, mat) {
     var m44 = mat[15]
     // Cannot normalize.
-    if (m44 === 0) 
+    if (m44 === 0)
         return false
     var scale = 1 / m44
     for (var i=0; i<16; i++)
@@ -7704,7 +7704,7 @@ function interpolate(out, start, end, alpha) {
     var r0 = decompose(start, state0.translate, state0.scale, state0.skew, state0.perspective, state0.quaternion)
     var r1 = decompose(end, state1.translate, state1.scale, state1.skew, state1.perspective, state1.quaternion)
     if (!r0 || !r1)
-        return false    
+        return false
 
 
     //now lerp/slerp the start and end components into a temporary     lerp(tmptranslate, state0.translate, state1.translate, alpha)
@@ -7771,7 +7771,7 @@ module.exports = function recomposeMat4(matrix, translation, scale, skew, perspe
     matrix[7] = perspective[1]
     matrix[11] = perspective[2]
     matrix[15] = perspective[3]
-        
+
     // apply skew
     // temp is a identity 4x4 matrix initially
     mat4.identity(temp)
@@ -7989,7 +7989,7 @@ proto.getDistanceLimits = function(out) {
 
 function createMatrixCameraController(options) {
   options = options || {}
-  var matrix = options.matrix || 
+  var matrix = options.matrix ||
               [1,0,0,0,
                0,1,0,0,
                0,0,1,0,
@@ -8676,7 +8676,7 @@ proto.rotate = function(t, dx, dy, dz) {
 
   var bx = -(fy * qz - fz * qy)
   var by = -(fz * qx - fx * qz)
-  var bz = -(fx * qy - fy * qx)  
+  var bz = -(fx * qy - fy * qx)
   var bw = Math.sqrt(Math.max(0.0, 1.0 - Math.pow(bx,2) - Math.pow(by,2) - Math.pow(bz,2)))
   var bl = len4(bx, by, bz, bw)
   if(bl > 1e-6) {
@@ -8699,7 +8699,7 @@ proto.rotate = function(t, dx, dy, dz) {
   var cy = ay*bw + aw*by + az*bx - ax*bz
   var cz = az*bw + aw*bz + ax*by - ay*bx
   var cw = aw*bw - ax*bx - ay*by - az*bz
-  
+
   //Apply roll
   if(dz) {
     bx = fx
@@ -8782,7 +8782,7 @@ proto.setMatrix = function(t, matrix) {
     var cy = mat[13]/w
     var cz = mat[14]/w
 
-    this.recalcMatrix(t)  
+    this.recalcMatrix(t)
     var r = Math.exp(this.computedRadius[0])
     this.center.set(t, cx-mat[2]*r, cy-mat[6]*r, cz-mat[10]*r)
     this.radius.idle(t)
@@ -8802,7 +8802,7 @@ proto.setDistanceLimits = function(lo, hi) {
   if(lo > 0) {
     lo = Math.log(lo)
   } else {
-    lo = -Infinity    
+    lo = -Infinity
   }
   if(hi > 0) {
     hi = Math.log(hi)
@@ -18987,7 +18987,7 @@ function toPX(str, element) {
   element = element || document.body
   str = (str || 'px').trim().toLowerCase()
   if(element === window || element === document) {
-    element = document.body 
+    element = document.body
   }
   switch(str) {
     case '%':  //Ambiguous, not sure if we should use width or height
@@ -19204,7 +19204,7 @@ proto.recalcMatrix = function(t) {
 
   var center = this.computedCenter
 
-  var wx = ctheta * cphi 
+  var wx = ctheta * cphi
   var wy = stheta * cphi
   var wz = sphi
 
@@ -19345,12 +19345,12 @@ proto.translate = function(t, dx, dy, dz) {
 
 //Recenters the coordinate axes
 proto.setMatrix = function(t, mat, axes, noSnap) {
-  
+
   //Get the axes for tare
   var ushift = 1
   if(typeof axes === 'number') {
     ushift = (axes)|0
-  } 
+  }
   if(ushift < 0 || ushift > 3) {
     ushift = 1
   }
@@ -19358,7 +19358,7 @@ proto.setMatrix = function(t, mat, axes, noSnap) {
   var fshift = (ushift + 1) % 3
 
   //Recompute state for new t value
-  if(!mat) { 
+  if(!mat) {
     this.recalcMatrix(t)
     mat = this.computedMatrix
   }
@@ -19400,7 +19400,7 @@ proto.setMatrix = function(t, mat, axes, noSnap) {
   rx /= rl
   ry /= rl
   rz /= rl
-  
+
   var fx = uy * rz - uz * ry
   var fy = uz * rx - ux * rz
   var fz = ux * ry - uy * rx
@@ -20721,11 +20721,11 @@ const renderBloom = createRenderBloom(regl, canvas)
 const renderBlur = createRenderBlur(regl)
 
 const tracks = [
+  {title: 'Recuerdo', artist: 'Xunorus', path: 'src/audio/recuerdo_20180327_18.24.flac'},
+  {title: 'Recuerdo', artist: 'Xunorus', path: 'src/audio/Pulsacion Solar_20180317.flac'},
+  {title: 'Recuerdo', artist: 'Xunorus', path: 'src/audio/fragmento de MILONGA_20180317.flac'},
   {title: '715 - CRΣΣKS', artist: 'Bon Iver', path: 'src/audio/715-creeks.mp3'},
-  {title: 'Another New World', artist: 'Punch Brothers', path: 'src/audio/another-new-world.mp3'},
-  {title: 'The Wilder Sun', artist: 'Jon Hopkins', path: 'src/audio/the-wilder-sun.mp3'},
-  {title: 'Lost It To Trying', artist: 'Son Lux', path: 'src/audio/lost-it-to-trying.mp3'},
-  {title: 'Adagio for Strings', artist: 'Samuel Barber', path: 'src/audio/adagio-for-strings.mp3'}
+  {title: 'Adagio for Strings', artist: 'Samuel Barber', path: 'src/audio/the-wilder-sun.mp3'}
 ]
 
 const audio = createPlayer(tracks[0].path)
@@ -21464,7 +21464,7 @@ function makePixelPicker (canvas) {
 }
 
 function printText (context, text, size) {
-  context.font = `${size}px "Open Sans"`
+  context.font = `${size}px "Audiowide"`
   context.textAlign = 'center'
   context.textBaseline = 'middle'
   context.fillStyle = 'rgb(0, 0, 0)'

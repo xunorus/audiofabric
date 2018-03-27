@@ -52,11 +52,11 @@ const renderBloom = createRenderBloom(regl, canvas)
 const renderBlur = createRenderBlur(regl)
 
 const tracks = [
+  {title: 'Recuerdo', artist: 'Xunorus', path: 'src/audio/recuerdo_20180327_18.24.flac'},
+  {title: 'Milonga Proundo', artist: 'Xunorus', path: 'src/audio/fragmento de MILONGA_20180317.flac'},
+  {title: 'La bella flor', artist: 'Xunorus', path: 'src/audio/Pulsacion Solar_20180317.flac'},
   {title: '715 - CRΣΣKS', artist: 'Bon Iver', path: 'src/audio/715-creeks.mp3'},
-  {title: 'Another New World', artist: 'Punch Brothers', path: 'src/audio/another-new-world.mp3'},
-  {title: 'The Wilder Sun', artist: 'Jon Hopkins', path: 'src/audio/the-wilder-sun.mp3'},
-  {title: 'Lost It To Trying', artist: 'Son Lux', path: 'src/audio/lost-it-to-trying.mp3'},
-  {title: 'Adagio for Strings', artist: 'Samuel Barber', path: 'src/audio/adagio-for-strings.mp3'}
+  {title: 'Adagio for Strings', artist: 'Samuel Barber', path: 'src/audio/the-wilder-sun.mp3'}
 ]
 
 const audio = createPlayer(tracks[0].path)
@@ -343,10 +343,12 @@ function startLoop () {
     })
     renderToBlurredFBO(() => {
       if (settings.motionBlur) {
-        renderColoredQuad({ color: [0.18, 0.18, 0.18, settings.motionBlurAmount] })
+        renderColoredQuad({ color: [0, 0, 0, settings.motionBlurAmount] })
+        // renderColoredQuad({ color: [0.18, 0.18, 0.18, settings.motionBlurAmount] })
       } else {
         regl.clear({
-          color: [0.18, 0.18, 0.18, 1],
+          // color: [0.18, 0.18, 0.18, 1],
+          color: [0, 0, 0.18, 1],
           depth: 1
         })
       }
