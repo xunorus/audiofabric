@@ -21234,8 +21234,9 @@ const Alea = require('alea')
 const { createSpring } = require('spring-animator')
 
 const settings = {
-  text: 'audiofabric',
-  particles: 600,
+  text: 'MusicFromStars',
+  particles: 60,
+  // particles: 600,
   dampening: 0.35, // 0.17
   stiffness: 0.85, // 0.9
   speed: 50,

@@ -4,7 +4,7 @@ const Alea = require('alea')
 const { createSpring } = require('spring-animator')
 
 const settings = {
-  text: 'audiofabric',
+  text: 'Music From Stars',
   particles: 600,
   dampening: 0.35, // 0.17
   stiffness: 0.85, // 0.9

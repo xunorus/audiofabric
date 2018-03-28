@@ -53,10 +53,12 @@ const renderBlur = createRenderBlur(regl)
 
 const tracks = [
   {title: 'Recuerdo', artist: 'Xunorus', path: 'src/audio/recuerdo_20180327_18.24.flac'},
-  {title: 'Milonga Proundo', artist: 'Xunorus', path: 'src/audio/fragmento de MILONGA_20180317.flac'},
-  {title: 'La bella flor', artist: 'Xunorus', path: 'src/audio/Pulsacion Solar_20180317.flac'},
-  {title: '715 - CRΣΣKS', artist: 'Bon Iver', path: 'src/audio/715-creeks.mp3'},
-  {title: 'Adagio for Strings', artist: 'Samuel Barber', path: 'src/audio/the-wilder-sun.mp3'}
+  {title: 'Milonga Profundo', artist: 'Xunorus', path: 'src/audio/fragmento de MILONGA_20180317.flac'},
+  {title: 'La bella florcina', artist: 'Xunorus', path: 'src/audio/Pulsacion Solar_20180317.flac'},
+  {title: 'Vidala para la flor', artist: 'Bon Iver', path: 'src/audio/715-creeks.mp3'},
+  {title: 'Elige tus colores', artist: 'Bon Iver', path: 'src/audio/715-creeks.mp3'},
+  {title: 'Huayno', artist: 'Bon Iver', path: 'src/audio/715-creeks.mp3'},
+  {title: 'Despierta', artist: 'Samuel Barber', path: 'src/audio/the-wilder-sun.mp3'}
 ]
 
 const audio = createPlayer(tracks[0].path)
